@@ -6,6 +6,7 @@ public class LinkedIntList {
     // want to create LL class to add nodes
     private ListNode front;
     public LinkedIntList(){
+        //test commit
         front = null;
     }
     // Adds the given value to the end of the list.
