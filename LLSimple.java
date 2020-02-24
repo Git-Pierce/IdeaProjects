@@ -8,6 +8,7 @@ public class LLSimple {
 //        list.next = new ListNode();  //next node
 //        list.next.data = -3;
 //        list.next.next = new ListNode();
+
 //
 //        //list.next.next.data = 17;
 //        //list.next.next.next = null;
@@ -15,6 +16,7 @@ public class LLSimple {
         // 42 -3 17    }
         System.out.println("List 0 - Building lists using ListNode class...");
         ListNode list = new ListNode(42);
+
         list.next = new ListNode(-3);  //next node
         list.next.next = new ListNode(17);
         System.out.println(list.data + " " + list.next.data + " " + list.next.next.data);
