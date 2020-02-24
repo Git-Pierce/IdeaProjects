@@ -68,5 +68,16 @@ public class LLSimple {
         //Concatenate two lists
         list4.next.next.next = list5;
         System.out.println("list4: " + list4.data +"->" + list4.next.data + "->"+list4.next.next.data +"->"+ list4.next.next.next.data+"->"+list4.next.next.next.next);
+//        while (list != null) { // lose the link to your LL!
+//            System.out.println(list.data);
+//            list = list.next;    // move to next node}
+//        }
+        //need to store a pointer to current, changing current will not damage the list
+        System.out.println("Linked List Traversal...While Loop");
+        ListNode current = list4;
+        while (current != null) {
+            System.out.print(current.data + "->");
+            current = current.next;  // move to next node}
+        }
     }
 }
