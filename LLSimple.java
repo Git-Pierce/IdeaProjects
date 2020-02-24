@@ -79,5 +79,15 @@ public class LLSimple {
             System.out.print(current.data + "->");
             current = current.next;  // move to next node}
         }
+        //using the LinkedIntList class
+        LinkedIntList list6 = new LinkedIntList();
+        for (int i = 0; i <=3; i++){
+            list6.add(i*10);
+        }
+//        link6.add(10);
+//        link6.add(20);
+//        link6.add(30);
+        System.out.println("Linked List Traversal...While Loop");
+        System.out.println(list6);
     }
 }
