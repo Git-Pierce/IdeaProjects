@@ -74,6 +74,7 @@ public class LLSimple {
 //        }
         //need to store a pointer to current, changing current will not damage the list
         System.out.println("Linked List Traversal...While Loop");
+
         ListNode current = list4;
         while (current != null) {
             System.out.print(current.data + "->");
