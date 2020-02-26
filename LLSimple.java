@@ -31,43 +31,43 @@ public class LLSimple {
         System.out.println("List 2 - Insert nodes at the end...");
         ListNode list2 = new ListNode((1));
         list2.next = new ListNode(2);
-        System.out.println(list2.data + "-> " + list2.next.data +"-> " + list2.next.next);
+        System.out.println(list2.data + "-> " + list2.next.data + "-> " + list2.next.next);
         // insert a 3 at the end
         list2.next.next = new ListNode(3);
-        System.out.println("Insert at end: " + " " + list2.data + "-> " + list2.next.data + "-> "+ list2.next.next.data);
+        System.out.println("Insert at end: " + " " + list2.data + "-> " + list2.next.data + "-> " + list2.next.next.data);
         // insert 3 at the beginning
         System.out.println("List 3 - Insert at beginning...");
         ListNode list3 = new ListNode((1));
         list3.next = new ListNode(2);
-        System.out.println("build list3: "+list3.data + "-> " + list3.next.data);
+        System.out.println("build list3: " + list3.data + "-> " + list3.next.data);
         ListNode three = new ListNode(3);
         three.next = list3;  //new node to attach to the front
 
-        System.out.println(three.data +"-> " + list3.data + " ->" + list3.next.data );
+        System.out.println(three.data + "-> " + list3.data + " ->" + list3.next.data);
         list3 = three;  //repoint the list3 to the front new node
-        System.out.println(list3.data +"-> " + list3.next.data + " ->" + list3.next.next.data + "-> " + list3.next.next.next );
-        System.out.println(three.data  + list3.data + list3.next.data ); //this is different!
+        System.out.println(list3.data + "-> " + list3.next.data + " ->" + list3.next.next.data + "-> " + list3.next.next.next);
+        System.out.println(three.data + list3.data + list3.next.data); //this is different!
 
         System.out.println("List4/List5 - Insert node from List5 to List4...");
         ListNode list4 = new ListNode((10));
         list4.next = new ListNode(20);
-        System.out.println("build list4: "+list4.data + "-> " + list4.next.data);
+        System.out.println("build list4: " + list4.data + "-> " + list4.next.data);
         ListNode list5 = new ListNode((30));
         list5.next = new ListNode(40);
-        System.out.println("build list5: "+list5.data + "-> " + list5.next.data);
+        System.out.println("build list5: " + list5.data + "-> " + list5.next.data);
 
         //declare a temporary list pointer to avoid loss of nodes or orphans!!
         ListNode temp = list5.next;
-        System.out.println("temp: " + temp.data +"->" + temp.next);
+        System.out.println("temp: " + temp.data + "->" + temp.next);
         //reassign pointers
         list5.next = list4.next;  // 30 points to 20
         list4.next = list5;        // 10 points to 30
         list5 = temp;               //list 5 is now points to 40
-        System.out.println("list4: " + list4.data +"->" + list4.next.data + "->"+list4.next.next.data +"->"+ list4.next.next.next);
-        System.out.println("list5: " + list5.data +"->" + list5.next);
+        System.out.println("list4: " + list4.data + "->" + list4.next.data + "->" + list4.next.next.data + "->" + list4.next.next.next);
+        System.out.println("list5: " + list5.data + "->" + list5.next);
         //Concatenate two lists
         list4.next.next.next = list5;
-        System.out.println("list4: " + list4.data +"->" + list4.next.data + "->"+list4.next.next.data +"->"+ list4.next.next.next.data+"->"+list4.next.next.next.next);
+        System.out.println("list4: " + list4.data + "->" + list4.next.data + "->" + list4.next.next.data + "->" + list4.next.next.next.data + "->" + list4.next.next.next.next);
 //        while (list != null) { // lose the link to your LL!
 //            System.out.println(list.data);
 //            list = list.next;    // move to next node}
@@ -82,13 +82,45 @@ public class LLSimple {
         }
         //using the LinkedIntList class
         LinkedIntList list6 = new LinkedIntList();
-        for (int i = 0; i <=3; i++){
-            list6.add(i*10);
+        for (int i = 0; i <= 3; i++) {
+            list6.add(i * 10);
         }
 //        link6.add(10);
 //        link6.add(20);
 //        link6.add(30);
-        System.out.println("Linked List Traversal...While Loop");
+        System.out.println("Linked List Traversal...For Loop");
         System.out.println(list6);
+        for (int i = 0; i < list6.size(); i++) {
+            System.out.println("Get value @ index" + i + ": " + list6.get(i));
+        }
+        for (int i = 0; i < list6.size(); i++) {
+            System.out.println("Get value Pt2 @ index" + i + ": " + list6.getValue(i));
+        }
+        System.out.println("Linked List Check Odd and Even Numbers");
+        boolean oddEven = list6.hasOdd() && list6.hasEven();
+        System.out.println("List Has odd numbers: " + list6.hasOdd());
+        System.out.println("List Has even numbers: " + list6.hasEven());
+        System.out.println("List Has odd and even numbers: " + oddEven);
+
+        System.out.println("Linked List Add value at a certain index");
+        list6.add(5, 0);
+        System.out.println("New List with add: " + list6);
+        list6.add(5, 1);
+        System.out.println("New List with add: " + list6);
+        list6.remove(1);
+//        System.out.println("New List with remove: " + list6);
+//        //remove ALL the nodes, but this one leaves nodes behind
+//        for (int i=0; i < list6.size(); i++){
+//            System.out.println("Remove value  @ index" + i + ": "+ list6.getValue(i));
+//            list6.remove(i);
+//            System.out.println("New list after remove.." + list6);
+//        }
+        //play with the index values here
+        for (int i = list6.size()-1; i >= 0; i--) {
+            System.out.println("Remove value  @ index" + i + ": " + list6.getValue(i));
+            list6.remove(i);
+            System.out.println("New list after remove.." + list6);
+        }
     }
 }
+
