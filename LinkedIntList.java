@@ -75,6 +75,19 @@ public class LinkedIntList {
         return count;
     }
 
+    public int indexOf(int value){
+        int index =0;
+        ListNode current = front;
+        while (current != null){
+            if (current.data == value){
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+        return -1; //index not found
+    }
+
     public boolean hasOddEven() {
         ListNode current = front;
         boolean even = false;
