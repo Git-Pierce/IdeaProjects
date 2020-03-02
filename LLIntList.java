@@ -1,11 +1,13 @@
 package Ch16LinkedList;
 
-public class LLIntList {
+public class LLIntList  {
     private ListNode front;
 
     public LLIntList() {
         front = null;
     }
+    // Adds the given value to the end of the list.
+
     // Adds the given value to the end of the list.
     public void add(int value) {
         if (front == null) {
@@ -29,7 +31,36 @@ public class LLIntList {
         }
         return count;
     }
+    public int indexOf(int value){
+        int index =0;
+        ListNode current = front;
+        //finds first occurence of index
+        while (current != null){
+            if (current.data == value){
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+        return -1; //index not found
+    }
+    public String toString() {
+        if (front == null) {
+            return "[]";
+        } else {
+            String result = "[" + front.data;
+            ListNode current = front.next;
+            while (current != null) {
+                result += "-> " + current.data;
+                current = current.next;
+            }
+            result += "]";
+            return result;
+        }
 
+
+
+    }
     public void removeAt(int value) {
 
         if (front != null) {
@@ -75,21 +106,5 @@ public class LLIntList {
         }
         return found;
     }
-    public String toString() {
-        if (front == null) {
-            return "[]";
-        } else {
-            String result = "[" + front.data;
-            ListNode current = front.next;
-            while (current != null) {
-                result += "-> " + current.data;
-                current = current.next;
-            }
-            result += "]";
-            return result;
-        }
 
-
-
-    }
 }

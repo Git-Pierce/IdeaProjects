@@ -15,7 +15,7 @@ public class LLTraversal {
         }
 
 //        System.out.println("Testing value removal...");
-//        for (int i=0; i < list.size(); i++){
+//        for (int i=0; i < list.size(); i++) {
 //            System.out.println("Before removal list: " + list);
 //            list.removeAt(3);
 //            System.out.println("After removal list: " + list);
@@ -26,6 +26,7 @@ public class LLTraversal {
 
         while (list.removeAt1(3)){
             System.out.println("Before removal list: " + list);
+            System.out.println("Index of 3:" +list.indexOf(3));
             list.removeAt(3);
             System.out.println("After removal list: " + list);
         }
