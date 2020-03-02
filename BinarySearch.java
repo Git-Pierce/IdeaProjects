@@ -1,4 +1,4 @@
-package Search;
+package Ch16LinkedList;
 import java.util.Arrays;
 import java.util.*;
 
