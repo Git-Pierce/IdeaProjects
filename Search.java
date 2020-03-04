@@ -1,4 +1,4 @@
-package Search;
+package Ch16LinkedList;
 import java.lang.reflect.Array;
 import java.util.*;
 
@@ -40,12 +40,30 @@ public class Search {
         //transfer array into list and sort and print it!
         Integer[] intArray = {100, 0, 20, -1};
         List<Integer> intList = new ArrayList<>();
+        List<Integer> intList2 = new ArrayList<>();
+
         for (Integer num: intArray){
             intList.add(num);
+            intList2.add(num);
         }
         System.out.println("Before:" + intList);
         Collections.sort(intList);
         System.out.println("After:" + intList);
-        }
-    }
+
+        int num = Collections.binarySearch(intList, 0);
+        System.out.println("BSearch: " + num);
+
+        Collections.copy(intList2, intList);  //has to be of equal size
+        System.out.println("IntList2: " + intList2);
+        List<Integer> empList = Collections.emptyList();
+        System.out.println("Empty List:" + empList);  //read only list
+        Collections.fill(intList2, 0);
+        System.out.println("intList2: " + intList2);
+        int maxnum = Collections.max(intList);
+        System.out.println("Max num:" + maxnum);
+        Collections.reverse(intList);
+        System.out.println("reversed list: "+ intList);
+        Collections.shuffle(intList);
+        System.out.println("Shuffle list: " + intList);
+    }}
 

@@ -1,4 +1,4 @@
-package Search;
+package Ch16LinkedList;
 
 public class BinSearch {
     public static void main(String[] args){
